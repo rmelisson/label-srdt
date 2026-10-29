@@ -191,6 +191,21 @@
         <h2>Question <span id="qnum"></span> <span id="idcc" class="badge" hidden></span></h2>
         <div class="question" id="question"></div>
       </section>
+      <section class="card" id="sources-card">
+        <h2>Sources de la question</h2>
+        <div class="sources-label">
+          <span class="name">Sources suffisantes pour répondre ?
+            <button id="sources-info" aria-label="Définition : sources suffisantes">ⓘ</button></span>
+          <span class="choices" id="sources-choices"></span>
+        </div>
+        <div class="row"><textarea id="sources-comment" aria-label="Commentaire sur les sources (facultatif)" placeholder="Commentaire sur les sources (facultatif) : ce qui manque, ce qui est hors sujet"></textarea></div>
+        <p class="hint" style="margin:6px 0 10px">Une seule évaluation par question, pour toutes ses réponses : elle porte sur les sources, pas sur les réponses.</p>
+        <details class="sources" id="sources">
+          <summary>Sources fournies aux systèmes pour cette question</summary>
+          <p class="hint">Les mêmes sources ont été données à toutes les réponses de cette question. Elles servent à vérifier les citations ; l'exactitude juridique s'apprécie au regard du droit en vigueur.</p>
+          <div id="source-groups"></div>
+        </details>
+      </section>
       <div class="workspace">
       <section class="card">
         <h2>Réponse <span id="letter"></span></h2>
@@ -212,21 +227,6 @@
         <p class="hint" style="margin:6px 0 0">Touches : <kbd>←</kbd> <kbd>→</kbd> réponse précédente / suivante · <kbd>a</kbd>–<kbd>d</kbd> choisir une réponse · <kbd>s</kbd> sources de la question · <kbd>n</kbd> prochaine à terminer · <kbd>f</kbd> à revoir · <kbd>g</kbd> consignes. <span id="storage-hint">Vos évaluations sont enregistrées dans ce navigateur au fil de l'eau : exportez régulièrement le CSV.</span></p>
       </section>
       </div>
-      <section class="card" id="sources-card">
-        <h2>Sources de la question</h2>
-        <div class="sources-label">
-          <span class="name">Sources suffisantes pour répondre ?
-            <button id="sources-info" aria-label="Définition : sources suffisantes">ⓘ</button></span>
-          <span class="choices" id="sources-choices"></span>
-        </div>
-        <div class="row"><textarea id="sources-comment" aria-label="Commentaire sur les sources (facultatif)" placeholder="Commentaire sur les sources (facultatif) : ce qui manque, ce qui est hors sujet"></textarea></div>
-        <p class="hint" style="margin:6px 0 10px">Une seule évaluation par question, pour toutes ses réponses : elle porte sur les sources, pas sur les réponses.</p>
-        <details class="sources" id="sources">
-          <summary>Sources fournies aux systèmes pour cette question</summary>
-          <p class="hint">Les mêmes sources ont été données à toutes les réponses de cette question. Elles servent à vérifier les citations ; l'exactitude juridique s'apprécie au regard du droit en vigueur.</p>
-          <div id="source-groups"></div>
-        </details>
-      </section>
     </main>
   </div>
 </div>
@@ -234,7 +234,7 @@
 <div id="toast" role="status"></div>
 
 <script type="application/json" id="data">null</script>
-<script type="application/json" id="vault">{"version": 1, "title": "Évaluation des réponses", "repo": "rmelisson/label-srdt-data", "data_path": "data.json", "labels_path": "labels.json", "kdf": "PBKDF2-HMAC-SHA256", "iterations": 600000, "salt": "kXr59aWvdI8kCNYibhKIMA==", "cipher": "AES-256-GCM", "iv": "dI+HxgnLKPlj2wFK", "ciphertext": "Jkn0L5GItV3rnCbdyYjfVylDYpQ1ENkBdcpAOOD2r/EBn9rh6AB7OVG/1fEjixexFHPKZvd98I4ddbFX/9ln0T6Isbq+i9MXHWQVRGydcS7kTTu4IlfH/wdYS6fkyDCYtiIxzHnHXg4iR0REMg=="}</script>
+<script type="application/json" id="vault">{"version": 1, "title": "Évaluation des réponses", "repo": "rmelisson/label-srdt-data", "data_path": "data.json", "labels_path": "labels.json", "kdf": "PBKDF2-HMAC-SHA256", "iterations": 600000, "salt": "vD3KsI5ukdcHfnqoxIiBig==", "cipher": "AES-256-GCM", "iv": "aydK0p0fyvbJrhA1", "ciphertext": "vhVslWGTyoxg7TyeDDcowNSgJskImvZMA50+sJ95lQxCY+lYWJBNhL3+zjuI4PjUhu7j4eNByOlI+++GQDdxkS02+n6OmXDzZ6uxBjdLr0B8xYvpFapbkLz0hKxl0N8nDEVHGG/iHLgDWsMgbQ=="}</script>
 
 <script id="core">
 // --- core:start (pure functions, tested with Node: no DOM in here)
